@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 7 feb 2025, 10:22:19 by Hibernate Tools 6.5.1.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="sqlite" name="clases.Departamentos" optimistic-lock="none" table="departamentos">
+        <id name="deptNo" type="byte">
+            <column name="dept_no"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="dnombre" type="string">
+            <column length="15" name="dnombre"/>
+        </property>
+        <property name="loc" type="string">
+            <column length="15" name="loc"/>
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="empleadoses" table="empleados">
+            <key>
+                <column name="dept_no" not-null="true"/>
+            </key>
+            <one-to-many class="clases.Empleados"/>
+        </set>
+    </class>
+</hibernate-mapping>
