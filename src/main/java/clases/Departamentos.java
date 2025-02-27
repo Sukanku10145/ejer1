@@ -59,9 +59,9 @@ public class Departamentos implements java.io.Serializable {
 	public void setEmpleadoses(Set empleadoses) {
 		this.empleadoses = empleadoses;
 	}
-	
+
 	@Override
 	public String toString() {
-	    return "Departamento { ID: " + deptNo + ", Nombre: " + dnombre + ", Ubicación: " + loc + " }";
+		return "Departamento { ID: " + deptNo + ", Nombre: " + dnombre + ", Ubicación: " + loc + " }";
 	}
 }

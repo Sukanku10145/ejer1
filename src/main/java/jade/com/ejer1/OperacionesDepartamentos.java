@@ -7,6 +7,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import clases.Departamentos;
+import clases.Empleados;
 
 public class OperacionesDepartamentos {
 
@@ -15,6 +16,28 @@ public class OperacionesDepartamentos {
 	public OperacionesDepartamentos() {
 
 		factorysesion = new Configuration().configure().buildSessionFactory();
+	}
+
+	public void ReadDepartamentoPorId(int empNo) {
+
+		Session session = factorysesion.openSession();
+		Transaction tx = null;
+
+		try {
+			tx = session.beginTransaction();
+			Departamentos departamento = session.get(Departamentos.class, empNo); 
+			if (departamento != null) {
+				System.out.println(departamento); 
+			} else {
+				System.out.println("Departamento no encontrado.");
+			}
+			tx.commit();
+		} catch (HibernateException e) {
+			if (tx != null) tx.rollback();
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
 	}
 
 	public void ReadDepartamentos() {
