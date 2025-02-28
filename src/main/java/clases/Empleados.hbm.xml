@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generated 7 feb 2025, 10:22:19 by Hibernate Tools 6.5.1.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class catalog="sqlite" name="clases.Empleados" optimistic-lock="none" table="empleados">
+    <class catalog="Crud" name="clases.Empleados" optimistic-lock="none" table="empleados">
         <id name="empNo" type="short">
             <column name="emp_no"/>
             <generator class="assigned"/>
